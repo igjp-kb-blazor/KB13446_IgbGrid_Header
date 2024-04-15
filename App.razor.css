@@ -1,0 +1,7 @@
+﻿::deep .header-left {
+    text-align: left;
+}
+
+::deep .header-center {
+    text-align: center;
+}

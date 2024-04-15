@@ -1,0 +1,54 @@
+﻿<div style="margin: 24px auto; max-width: 800px; padding: 0 24px; display:flex; flex-direction:column; ">
+    <IgbGrid class="container list"
+             Data="_people"
+             PrimaryKey="@nameof(Person.Id)"
+             AutoGenerate="false"
+             Height="600px">
+
+        <IgbColumn Name="Id"
+                   DataType="GridColumnDataType.Number"
+                   Field="@nameof(Person.Id)"
+                   Editable="true"
+                   Header="Id"
+                   Width="15%"/>
+        <IgbColumn Name="Name"
+                   Field="@nameof(Person.Name)" 
+                   Editable="true"
+                   Header="氏名"
+                   Width="15%"/>
+        <IgbColumn Name="Department"
+                   Field="@nameof(Person.Department)" 
+                   Editable="true"
+                   Header="職種"
+                   Width="20%"/>
+        <IgbColumn Name="Age"
+                   DataType="GridColumnDataType.Number"
+                   Field="@nameof(Person.Age)"
+                   Editable="true"
+                   Header="年齢"
+                   Width="15%"
+                   HeaderClasses="header-left" />
+        <IgbColumn Name="Skill"
+                   Field="@nameof(Person.Skill)"
+                   Editable="true"
+                   Header="スキル"
+                   HeaderClasses="header-center"
+                   Width="35%" />
+
+
+    </IgbGrid>
+</div>
+
+@code
+{
+    private record Person(int Id, string Name, string Department, int Age, string Skill);
+    private readonly IEnumerable<Person> _people = [
+    new Person(1, "山田 太郎", "営業", 25, "コミュニケーション能力"),
+    new Person(2, "鈴木 一郎", "開発", 40, "プログラミング"),
+    new Person(3, "佐藤 由美", "デザイン", 28, "グラフィックデザイン"),
+    new Person(4, "田中 花子", "営業", 37, "交渉力"),
+    new Person(5, "伊藤 次郎", "開発", 42, "アルゴリズム"),
+    new Person(6, "渡辺 三郎", "デザイン", 36, "UI/UXデザイン"),
+    new Person(7, "中村 五郎", "マーケティング", 49, "データ分析"),
+    new Person(8, "小林 美紀", "人事", 51, "リクルーティング"),    ];
+}
